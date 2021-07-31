@@ -1,0 +1,23 @@
+name: 'actions-crypto'
+description: 'a simple crypto(encrypt/decrypt) action for file or directory'
+author: 'shinhwagk'
+inputs:
+  crypto-path:
+    required: true
+    description: ''
+  crypto-action:
+    required: true
+    description: ''
+  crypto-password:
+    required: true
+    description: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.crypto-path }}
+    - ${{ inputs.crypto-action }}
+    - ${{ inputs.crypto-password }}
+branding:
+  icon: 'unlock'
+  color: 'orange'
